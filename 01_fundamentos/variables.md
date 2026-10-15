@@ -1,6 +1,6 @@
-# 📗 Variables — Tipos de datos: Flotantes, Cadenas y Booleanos
+# 📗 Variables — Tipos de datos y Nombres de Variables
 
-> Notas de apoyo del curso. Secciones **2.2.3 Flotantes**, **2.2.4 Cadenas** y **2.2.5 Valores Booleanos**.
+> Notas de apoyo del curso. Secciones **2.2.3 Flotantes**, **2.2.4 Cadenas**, **2.2.5 Valores Booleanos** y **2.4.2 Nombres de Variables**.
 
 ---
 
@@ -262,6 +262,107 @@ False
 
 ---
 
+## 2.4.2 🏷️ Nombres de Variables
+
+Si se desea **nombrar una variable**, se deben seguir las siguientes reglas:
+
+1. El nombre debe estar compuesto por **MAYÚSCULAS, minúsculas, dígitos** y el carácter **`_`** (guion bajo).
+2. El nombre debe **comenzar con una letra**.
+3. El carácter **guion bajo es considerado una letra**.
+4. Las **mayúsculas y minúsculas se tratan de forma distinta**: un poco diferente que en el mundo real — *Alicia* y *ALICIA* son el mismo nombre, pero en Python son **dos nombres de variable distintos**, y subsecuentemente, **dos variables diferentes**.
+5. El nombre **no puede ser igual a ninguna de las palabras reservadas** de Python (las palabras clave — se explica más adelante).
+
+> Nota: la **misma restricción aplica** a los nombres de **funciones**.
+
+### Longitud de los nombres
+
+Python **no impone restricciones en la longitud** de los nombres, pero eso **no significa** que un nombre largo sea mejor que uno corto.
+
+### Nombres correctos (pero no siempre convenientes)
+
+```python
+MyVariable
+i
+l
+t34
+Exchange_Rate
+counter
+days_to_christmas
+TheNameIsTooLongAndHardlyReadable
+_
+```
+
+### Nombres correctos con caracteres internacionales
+
+Estos nombres de variables **también son correctos**:
+
+```python
+Adiós_Señora
+sûr_la_mer
+Einbahnstraße
+переменная
+```
+
+> Python te permite usar no solo letras latinas, sino también **caracteres específicos de idiomas** que usan otros alfabetos.
+
+### Nombres incorrectos ❌
+
+```python
+10t          # no comienza con una letra
+!important   # no comienza con una letra
+exchange rate  # contiene un espacio
+```
+
+### 📝 Nota — Convención del PEP 8
+
+El [**PEP 8 — Style Guide for Python Code**](https://peps.python.org/pep-0008/) recomienda la siguiente **convención de nomenclatura** para variables y funciones:
+
+- Los nombres de las variables deben estar en **minúsculas**, con palabras separadas por **guiones bajos** para mejorar la legibilidad (por ejemplo: `var`, `my_variable`).
+- Los nombres de las **funciones** siguen la **misma convención** que los nombres de las variables (por ejemplo: `fun`, `my_function`).
+- También es posible usar **letras mixtas** (por ejemplo: `myVariable`), pero solo en contextos donde ese ya sea el **estilo predominante**, para mantener la compatibilidad retroactiva con la convención adoptada.
+
+---
+
+## 🔑 Palabras Clave
+
+Observa las palabras que juegan un papel **muy importante** en cada programa de Python:
+
+```python
+['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class',
+ 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for',
+ 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal',
+ 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+```
+
+Son llamadas **palabras clave** o (mejor dicho) **palabras clave reservadas**. Son *reservadas* porque **no se deben utilizar como nombres**: ni para variables, ni para funciones, ni para cualquier otra cosa que se desee crear.
+
+El **significado de la palabra reservada está predefinido** y **no debe cambiar**.
+
+Afortunadamente, debido al hecho de que Python es **sensible a mayúsculas y minúsculas**, cualquiera de estas palabras se pueden modificar cambiando una o varias letras de mayúsculas a minúsculas (o viceversa), creando una **nueva palabra la cual no está reservada**.
+
+Por ejemplo — **no** se puede nombrar a una variable así:
+
+```python
+import = 5    # ❌ prohibido: es una palabra clave reservada
+```
+
+No se puede tener una variable con ese nombre, **está prohibido**. Pero se puede hacer lo siguiente:
+
+```python
+Import = 5    # ✅ válido: cambió la mayúscula inicial
+```
+
+> Estas palabras podrían parecer un misterio ahorita, pero pronto se aprenderá acerca de su significado.
+
+> 💡 **Tip:** puedes obtener la lista de palabras clave desde el propio Python con el módulo `keyword`:
+>
+> ```python
+> import keyword
+> print(keyword.kwlist)
+> ```
+
+---
+
 ## ✅ Resumen
 
 | Concepto | Regla clave |
@@ -273,3 +374,6 @@ False
 | Python reformatea | Elige siempre la **presentación más corta** (`1e-22`) |
 | Comillas en cadenas | Escapa con `\"` o delimita con `'` (sé consistente) |
 | Booleanos | Solo existen `True` y `False` (con mayúscula inicial); equivalen a `1` y `0` |
+| Nombres de variables | Letras, dígitos y `_`; **empiezan con letra**; sin espacios; `Mayúsculas ≠ minúsculas` |
+| Palabras clave | Reservadas (ej. `import`, `class`); **no sirven como nombres** (pero `Import` sí) |
+| Estilo PEP 8 | Variables/funciones en `snake_case` (`my_variable`, `my_function`) |

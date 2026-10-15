@@ -16,7 +16,10 @@ material_python/
 │   ├── print_saltolinea.py
 │   ├── print_palabrasclave.py
 │   ├── print _apostrofes.py
-│   └── snake.py
+│   ├── operadores basicos.py
+│   ├── snake.py
+│   ├── variables.md
+│   └── resumen-operadores.md
 ├── 02_variables_y_tipos/        (próximamente)
 ├── 03_entradas_y_condicionales/ (próximamente)
 ├── 04_bucles/                   (próximamente)
@@ -39,7 +42,10 @@ material_python/
 | `print_saltolinea.py` | Saltos de línea dentro de un string con `\n` |
 | `print_palabrasclave.py` | Argumentos `sep` y `end` de `print()` |
 | `print _apostrofes.py` | Figuras con `*`, strings y multiplicación de strings |
+| `operadores basicos.py` | Operadores aritméticos: suma, multiplicación, potencia, división y residuo |
 | `snake.py` | Ejercicio práctico: imprimir texto con `print()` |
+| [`variables.md`](01_fundamentos/variables.md) | 📗 Notas: flotantes, cadenas y valores booleanos |
+| [`resumen-operadores.md`](01_fundamentos/resumen-operadores.md) | ➕ Notas: expresiones, operadores aritméticos y jerarquía de prioridades |
 
 ### `02_variables_y_tipos/` — *(próximamente)*
 Variables, tipos de datos, operadores y asignación.
@@ -92,6 +98,32 @@ python print.py
 - Los archivos llevan el nombre del concepto que ejemplifican (ej. `print_saltolinea.py`).
 - Cada archivo es autocontenido: se puede ejecutar de forma independiente.
 - Este material es de **apoyo** y se actualiza conforme se avanza en el curso.
+
+---
+
+## 📏 Guía de estilo
+
+Al escribir código en este repo se sigue la guía de estilo oficial de Python:
+
+- **[PEP 8 — Style Guide for Python Code](https://peps.python.org/pep-0008/)**
+
+Puntos clave de PEP 8 que conviene recordar:
+
+- Indentación de **4 espacios** por nivel (nunca tabuladores).
+- Máximo **79 caracteres** por línea de código.
+- Espacios alrededor de los operadores (`x + y`, no `x+y`).
+- Nombres de variables y funciones en `snake_case` (`mi_variable`).
+- Nombres de clases en `PascalCase` (`MiClase`).
+- Constantes en `MAYÚSCULAS` (`MAX_INTENTOS`).
+- Un `import` por línea.
+
+---
+
+## 🔗 Recursos útiles
+
+- [PEP 8 — Guía de estilo de Python](https://peps.python.org/pep-0008/)
+- [Documentación oficial de Python](https://docs.python.org/es/3/)
+- [python.org — Descargas](https://www.python.org/downloads/)
 
 ---
 
