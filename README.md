@@ -46,6 +46,7 @@ material_python/
 | `snake.py` | Ejercicio práctico: imprimir texto con `print()` |
 | [`variables.md`](01_fundamentos/variables.md) | 📗 Notas: flotantes, cadenas y valores booleanos |
 | [`resumen-operadores.md`](01_fundamentos/resumen-operadores.md) | ➕ Notas: expresiones, operadores aritméticos y jerarquía de prioridades |
+| [`lab_convertidor_millas.md`](01_fundamentos/lab_convertidor_millas.md) | 🔄 Laboratorio: convertidor millas ↔ kilómetros con variables y `round()` |
 
 ### `02_variables_y_tipos/` — *(próximamente)*
 Variables, tipos de datos, operadores y asignación.
