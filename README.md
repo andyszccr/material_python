@@ -16,11 +16,16 @@ material_python/
 │   ├── print_saltolinea.py
 │   ├── print_palabrasclave.py
 │   ├── print _apostrofes.py
-│   ├── operadores basicos.py
 │   ├── snake.py
+│   ├── 01 operadores basicos.py
+│   ├── 02 variables.py
 │   ├── variables.md
-│   └── resumen-operadores.md
-├── 02_variables_y_tipos/        (próximamente)
+│   ├── resumen-operadores.md
+│   ├── lab_convertidor_millas.md
+│   └── comentarios.md
+├── 02_variables_y_tipos/
+│   ├── README.md
+│   └── variables.py
 ├── 03_entradas_y_condicionales/ (próximamente)
 ├── 04_bucles/                   (próximamente)
 ├── 05_colecciones/              (próximamente)
@@ -42,14 +47,20 @@ material_python/
 | `print_saltolinea.py` | Saltos de línea dentro de un string con `\n` |
 | `print_palabrasclave.py` | Argumentos `sep` y `end` de `print()` |
 | `print _apostrofes.py` | Figuras con `*`, strings y multiplicación de strings |
-| `operadores basicos.py` | Operadores aritméticos: suma, multiplicación, potencia, división y residuo |
 | `snake.py` | Ejercicio práctico: imprimir texto con `print()` |
-| [`variables.md`](01_fundamentos/variables.md) | 📗 Notas: flotantes, cadenas y valores booleanos |
+| `01 operadores basicos.py` | Operadores aritméticos: suma, multiplicación, potencia, división y residuo |
+| `02 variables.py` | Declaración de variables (entero, flotante, cadena), imprimir múltiples valores, concatenación y reasignación |
+| [`variables.md`](01_fundamentos/variables.md) | 📗 Notas: flotantes, cadenas, valores booleanos y nombres de variables |
 | [`resumen-operadores.md`](01_fundamentos/resumen-operadores.md) | ➕ Notas: expresiones, operadores aritméticos y jerarquía de prioridades |
 | [`lab_convertidor_millas.md`](01_fundamentos/lab_convertidor_millas.md) | 🔄 Laboratorio: convertidor millas ↔ kilómetros con variables y `round()` |
+| [`comentarios.md`](01_fundamentos/comentarios.md) | 💬 Notas: comentarios con `#`, marcar código y nombres auto-comentables |
 
-### `02_variables_y_tipos/` — *(próximamente)*
-Variables, tipos de datos, operadores y asignación.
+### `02_variables_y_tipos/` — Variables y tipos de datos
+
+| Archivo | Tema |
+|---|---|
+| [`README.md`](02_variables_y_tipos/README.md) | 📗 Notas: qué son las variables, tipos de datos, reasignación, operadores abreviados y `del` |
+| [`variables.py`](02_variables_y_tipos/variables.py) 🐍 | Ejemplos ejecutables: creación de variables, `type()`, asignación múltiple, `*=`, `+=`, Pitágoras y `del` |
 
 ### `03_entradas_y_condicionales/` — *(próximamente)*
 `input()`, `if`, `elif`, `else` y operadores de comparación.
