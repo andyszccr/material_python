@@ -25,6 +25,7 @@ material_python/
 │   └── comentarios.md
 ├── 02_variables_y_tipos/
 │   ├── README.md
+│   ├── operadores.md
 │   └── variables.py
 ├── 03_entradas_y_condicionales/ (próximamente)
 ├── 04_bucles/                   (próximamente)
@@ -60,6 +61,7 @@ material_python/
 | Archivo | Tema |
 |---|---|
 | [`README.md`](02_variables_y_tipos/README.md) | 📗 Notas: qué son las variables, tipos de datos, reasignación, operadores abreviados y `del` |
+| [`operadores.md`](02_variables_y_tipos/operadores.md) | 🔗 Notas: operadores de cadena `+`/`*` (concatenación y replicación), `str()` y resumen de la sección de entrada/salida |
 | [`variables.py`](02_variables_y_tipos/variables.py) 🐍 | Ejemplos ejecutables: creación de variables, `type()`, asignación múltiple, `*=`, `+=`, Pitágoras y `del` |
 
 ### `03_entradas_y_condicionales/` — *(próximamente)*
