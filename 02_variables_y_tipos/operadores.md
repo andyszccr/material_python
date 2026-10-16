@@ -1,6 +1,6 @@
 # 🔗 Operadores de Cadena y Conversión de Tipos
 
-> Notas de apoyo del curso (sección 6 — **Entrada y salida básica**): operadores `+` y `*` aplicados a cadenas, la función `str()`, y resumen de la sección.
+> Notas de apoyo del curso: **sección 6 — Entrada y salida básica** (operadores `+` y `*` aplicados a cadenas, la función `str()`, resumen de la sección) y **sección 7 — Operadores de comparación**.
 
 ---
 
@@ -222,3 +222,87 @@ print(str(final_hour) + ":" + str(final_minute))
 | `string * number` | **Replicación**: repite la cadena; ≤ 0 produce `""` |
 | `str()` | Convierte **cualquier valor** a cadena (siempre posible) |
 | `input()` | Lee de la consola, **siempre devuelve `str`**, y detiene el programa |
+
+---
+
+## 📊 Operadores de comparación
+
+> Notas de la sección **7 — Estructura alternativa**: los seis operadores que comparan valores.
+
+### Igualdad: el operador `==` (igual a)
+
+El operador **`==`** compara los **valores** de dos operandos. Si son iguales, el resultado de la comparación es **`True`**; si no lo son, es **`False`**.
+
+Observa esta comparación — ¿cuál es el resultado?
+
+```python
+var == 0
+```
+
+> 📌 **No podemos encontrar la respuesta si no sabemos qué valor está almacenado actualmente en `var`.** Si la variable ha cambiado muchas veces durante la ejecución, o si su valor inicial se ingresa desde la consola, Python solo puede responder a esta pregunta **en tiempo de ejecución**.
+
+**Ejemplo — el programador con insomnio:** debe contar ovejas negras y blancas por separado, siempre y cuando haya **exactamente el doble** de ovejas negras que de blancas. La pregunta es:
+
+```python
+black_sheep == 2 * white_sheep
+```
+
+Debido a la **baja prioridad** del operador `==`, la pregunta se trata como si estuviera escrita así:
+
+```python
+black_sheep == (2 * white_sheep)
+```
+
+### Desigualdad: el operador `!=` (no es igual a)
+
+El operador **`!=`** también compara los valores de dos operandos. La diferencia con `==`: si los valores **son iguales**, el resultado es **`False`**; si **no son iguales**, es **`True`**.
+
+```python
+var = 0  # Asignando 0 a var
+print(var != 0)   # False
+
+var = 1  # Asignando 1 a var
+print(var != 0)   # True
+```
+
+### Mayor que: el operador `>`
+
+También se puede hacer una pregunta de comparación usando el operador **`>` (mayor que)**. Si deseas saber si hay **más ovejas negras que blancas**:
+
+```python
+black_sheep > white_sheep   # Mayor que
+```
+
+**`True`** lo confirma; **`False`** lo niega.
+
+### Mayor o igual que: el operador `>=`
+
+El operador mayor que tiene una variante especial, **no estricta**, denotada de manera diferente que la notación aritmética clásica: **`>=` (mayor o igual que)**. Hay **dos signos subsecuentes**, no uno.
+
+```python
+centigrade_outside >= 0.0   # Mayor o igual que
+```
+
+> 📌 **Prioridad y asociatividad:** los operadores de comparación (`>`, `>=`, `<`, `<=`) son **operadores binarios con enlazado del lado izquierdo**, y su prioridad es **mayor** que la de `==` y `!=`. Es decir: `a > b == c` se evalúa como `(a > b) == c`.
+
+### Menor que `<` y menor o igual que `<=`
+
+Como probablemente ya hayas adivinado, los operadores son **`<` (menor que)** y su hermano no estricto **`<=` (menor o igual que)**:
+
+```python
+current_velocity_mph < 85   # Menor que
+current_velocity_mph <= 85  # Menor o igual que
+```
+
+### Tabla resumen de comparación
+
+| Operador | Signo | Resultado `True` cuando... |
+|---|---|---|
+| igual a | `==` | los valores son **iguales** |
+| no igual a | `!=` | los valores son **distintos** |
+| mayor que | `>` | el operando izquierdo **>** derecho |
+| mayor o igual que | `>=` | izquierdo **≥** derecho |
+| menor que | `<` | izquierdo **<** derecho |
+| menor o igual que | `<=` | izquierdo **≤** derecho |
+
+> 📌 Todos son **binarios**, con **enlazado del lado izquierdo**. Prioridad: `<`, `<=`, `>`, `>=` son **más altas** que `==` y `!=`.
