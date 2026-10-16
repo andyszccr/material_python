@@ -57,9 +57,15 @@ material_python/
 │   ├── operaciones_en_cadena.py
 │   └── if_else.py
 ├── 03_entradas_y_condicionales/ (próximamente)
-├── bucles y listas/
+├── 03 bucles y listas/
 │   ├── README.md
-│   └── 01 while.py
+│   ├── listas.md
+│   ├── funciones_vs_metodos.md
+│   └── 01–10 *.py
+├── 04 ordenamiento burbuja/
+│   ├── 01ordenamiento.py
+│   ├── 02ordenamiento.py
+│   └── ordenamiento_burbuja.md
 ├── 06_funciones/                (próximamente)
 ├── 07_poo/                      (próximamente)
 ├── 08_archivos_y_errores/       (próximamente)
@@ -91,7 +97,7 @@ material_python/
 | Archivo | Tema |
 |---|---|
 | [`README.md`](02_variables_y_tipos/README.md) | 📗 Notas: qué son las variables, tipos de datos, reasignación, operadores abreviados y `del` |
-| [`operadores.md`](02_variables_y_tipos/operadores.md) | 🔗 Notas: operadores de cadena `+`/`*` (concatenación y replicación), `str()`, resumen de la sección de entrada/salida, operadores de comparación y su resumen (3.1.13), y operadores lógicos `and`/`or`/`not` (tablas de verdad, prioridades, De Morgan) |
+| [`operadores.md`](02_variables_y_tipos/operadores.md) | 🔗 Notas: operadores de cadena `+`/`*` (concatenación y replicación), `str()`, resumen de la sección de entrada/salida, operadores de comparación y su resumen (3.1.13), operadores lógicos `and`/`or`/`not` (tablas de verdad, prioridades, De Morgan) y operadores bit a bit 3.3.4 (`&`, `|`, `~`, `^`) |
 | [`variables.py`](02_variables_y_tipos/variables.py) 🐍 | Ejemplos ejecutables: creación de variables, `type()`, asignación múltiple, `*=`, `+=`, Pitágoras y `del` |
 | [`inputs.py`](02_variables_y_tipos/inputs.py) 🐍 | `input()` con y sin prompt, resultado como cadena, `float(input(...))` y la hipotenusa con datos del usuario |
 | [`operaciones_en_cadena.py`](02_variables_y_tipos/operaciones_en_cadena.py) 🐍 | Concatenación con `+`, rectángulo con `*`, `str()` para unir resultados y esqueleto del LAB de expresiones |
@@ -100,17 +106,31 @@ material_python/
 ### `03_entradas_y_condicionales/` — *(próximamente)*
 `input()`, `if`, `elif`, `else` y operadores de comparación.
 
-### `bucles y listas/` — Bucles y listas
+### `03 bucles y listas/` — Bucles y listas
 
 | Archivo | Tema |
 |---|---|
-| [`README.md`](bucles%20y%20listas/README.md) | 📗 Notas: bucle infinito (`while True`), `Ctrl-C`/`KeyboardInterrupt`, centinela, `for` + `range()` con tres argumentos y LAB 3.2.7 (contar *mississippily*) |
-| [`01 while.py`](bucles%20y%20listas/01%20while.py) 🐍 | Lee números hasta el centinela `0` y cuenta cuántos son pares e impares con un bucle `while` |
-| [`02 while.py`](bucles%20y%20listas/02%20while.py) 🐍 | Salir del `while` con una **variable contador** (`counter = 5` → cuenta hacia atrás hasta `0`) |
-| [`03 while.py`](bucles%20y%20listas/03%20while.py) | *(archivo vacío — pendiente)* |
-| [`04 Bucle_For.py`](bucles%20y%20listas/04%20Bucle_For.py) 🐍 | Puente `while` → `for`: contar 100 vueltas con `while` — motivación del bucle `for` |
-| [`05 Bucle_for.py`](bucles%20y%20listas/05%20Bucle_for.py) 🐍 | `for` con `range()` de **un argumento** (`range(10)`) y de **tres** (`range(2, 8, 3)` → `2, 5`) |
-| [`06 Bucle_for.py`](bucles%20y%20listas/06%20Bucle_for.py) | Primera aproximación al **LAB 3.2.7** con `time.sleep(1)` — *⚠️ aún no coincide con la salida esperada* |
+| [`README.md`](03%20bucles%20y%20listas/README.md) | 📗 Notas: bucle infinito (`while True`), `Ctrl-C`/`KeyboardInterrupt`, centinela, `for` + `range()` con tres argumentos y LAB 3.2.7 (contar *mississippily*) |
+| [`listas.md`](03%20bucles%20y%20listas/listas.md) | 📋 Notas: **3.4.1 — ¿Por qué necesitamos listas?** — escalares vs. secuencias, crear listas con corchetes, longitud, tipos mixtos y numeración desde cero |
+| [`funciones_vs_metodos.md`](03%20bucles%20y%20listas/funciones_vs_metodos.md) | ⚙️ Notas: **3.4.7 — Funciones vs. métodos** — a quién pertenece el código, invocación `function(arg)` vs `data.method(arg)` y por qué ampliar listas se hace con métodos |
+| [`01 while.py`](03%20bucles%20y%20listas/01%20while.py) 🐍 | Lee números hasta el centinela `0` y cuenta cuántos son pares e impares con un bucle `while` |
+| [`02 while.py`](03%20bucles%20y%20listas/02%20while.py) 🐍 | Salir del `while` con una **variable contador** (`counter = 5` → cuenta hacia atrás hasta `0`) |
+| [`03 while.py`](03%20bucles%20y%20listas/03%20while.py) | *(archivo vacío — pendiente)* |
+| [`04 Bucle_For.py`](03%20bucles%20y%20listas/04%20Bucle_For.py) 🐍 | Puente `while` → `for`: contar 100 vueltas con `while` — motivación del bucle `for` |
+| [`05 Bucle_for.py`](03%20bucles%20y%20listas/05%20Bucle_for.py) 🐍 | `for` con `range()` de **un argumento** (`range(10)`) y de **tres** (`range(2, 8, 3)` → `2, 5`) |
+| [`06 Bucle_for.py`](03%20bucles%20y%20listas/06%20Bucle_for.py) | Primera aproximación al **LAB 3.2.7** con `time.sleep(1)` — *⚠️ aún no coincide con la salida esperada* |
+| [`07 listas.py`](03%20bucles%20y%20listas/07%20listas.py) 🐍 | Imprimir una lista completa y modificar su primer elemento: `numbers[0] = 111` |
+| [`08 listas.py`](03%20bucles%20y%20listas/08%20listas.py) 🐍 | Copiar el valor del quinto elemento al segundo: `numbers[1] = numbers[4]` |
+| [`09 listas.py`](03%20bucles%20y%20listas/09%20listas.py) 🐍 | Modificaciones encadenadas sobre la lista + `len()` para imprimir su longitud |
+| [`10 listas.py`](03%20bucles%20y%20listas/10%20listas.py) 🐍 | `del numbers[1]` para **eliminar** un elemento: la lista pasa de 5 a 4 elementos |
+
+### `04 ordenamiento burbuja/` — Ordenamiento burbuja
+
+| Archivo | Tema |
+|---|---|
+| [`ordenamiento_burbuja.md`](04%20ordenamiento%20burbuja/ordenamiento_burbuja.md) | 🫧 Notas **3.5.1–3.5.4**: orden ascendente/descendente, pasadas de `[8, 10, 6, 2, 4]`, un pase con `for`, pases mínimos con bandera `swapped`, versión interactiva, `sort()`/`reverse()` y resumen de sección |
+| [`01ordenamiento.py`](04%20ordenamiento%20burbuja/01ordenamiento.py) | *(archivo vacío — pendiente)* |
+| [`02ordenamiento.py`](04%20ordenamiento%20burbuja/02ordenamiento.py) 🐍 | Programa completo: burbuja con `while swapped` + `for` anidado → imprime `[2, 4, 6, 8, 10]` |
 
 ### `06_funciones/` — *(próximamente)*
 Definición de funciones, parámetros, retornos y ámbito.

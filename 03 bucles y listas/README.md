@@ -1,6 +1,8 @@
 # 🔁 Bucles con `while` y `for`
 
 > Notas de apoyo del curso: **3.2.2 — Un bucle infinito** (qué es un bucle sin fin, `Ctrl-C` y el patrón de **bucle con centinela**), **el bucle `for` con `range()` de tres argumentos** y **LAB 3.2.7 — Fundamentos del bucle `for`: contar *mississippily***.
+>
+> 📋 El siguiente gran tema de esta carpeta, **listas (3.4.1 — ¿Por qué necesitamos listas?)**, tiene sus propias notas en [`listas.md`](listas.md), la distinción **funciones vs. métodos (3.4.7)** en [`funciones_vs_metodos.md`](funciones_vs_metodos.md) y el **ordenamiento burbuja** (3.5.x) en [`../04 ordenamiento burbuja/ordenamiento_burbuja.md`](../04%20ordenamiento%20burbuja/ordenamiento_burbuja.md).
 
 ---
 

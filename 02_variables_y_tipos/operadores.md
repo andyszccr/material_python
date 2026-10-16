@@ -1,6 +1,6 @@
 # 🔗 Operadores en Python: cadena, comparación y lógicos
 
-> Notas de apoyo del curso: **sección 6 — Entrada y salida básica** (operadores `+` y `*` aplicados a cadenas, la función `str()`, resumen de la sección), **sección 7 — Operadores de comparación**, **3.1.13 — Resumen de sección: operadores relacionales** y **operadores lógicos: `and`, `or`, `not`** (tablas de verdad, prioridades y leyes de De Morgan).
+> Notas de apoyo del curso: **sección 6 — Entrada y salida básica** (operadores `+` y `*` aplicados a cadenas, la función `str()`, resumen de la sección), **sección 7 — Operadores de comparación**, **3.1.13 — Resumen de sección: operadores relacionales**, **operadores lógicos: `and`, `or`, `not`** (tablas de verdad, prioridades y leyes de De Morgan) y **3.3.4 — Operadores bit a bit** (`&`, `|`, `~`, `^`: tablas de verdad, trucos de memoria y diferencias con los operadores lógicos).
 
 ---
 
@@ -453,4 +453,113 @@ print(all((not (p and q)) == ((not p) or (not q))
           for p in (False, True) for q in (False, True)))   # True
 print(all((not (p or q)) == ((not p) and (not q))
           for p in (False, True) for q in (False, True)))   # True
+```
+
+---
+
+## 0️⃣ 3.3.4 Operadores bit a bit
+
+Sin embargo, hay **cuatro operadores** que nos permiten **manipular bits de datos individuales**. Se denominan **operadores bit a bit** (*bitwise*).
+
+Cubren todas las operaciones que mencionamos anteriormente en el contexto lógico, y un operador adicional: **`or` (significa *o exclusivo*)**, que se denota como **`^`** (signo de intercalación). Aquí están todos ellos:
+
+- **`&`** (*ampersand*) — **conjunción** a nivel de bits;
+- **`|`** (barra vertical) — **disyunción** a nivel de bits;
+- **`~`** (tilde) — **negación** a nivel de bits;
+- **`^`** (signo de intercalación / *caret*) — **o exclusivo** a nivel de bits (*xor*).
+
+### Tablas de verdad bit a bit
+
+**Operaciones bit a bit (`&`, `|` y `^`):**
+
+| Argumento A | Argumento B | `A & B` | `A \| B` | `A ^ B` |
+|---|---|---|---|---|
+| 0 | 0 | 0 | 0 | 0 |
+| 0 | 1 | 0 | 1 | 1 |
+| 1 | 0 | 0 | 1 | 1 |
+| 1 | 1 | 1 | 1 | 0 |
+
+**Operaciones bit a bit (`~`):**
+
+| Argumento | `~ Argumento` |
+|---|---|
+| 0 | 1 |
+| 1 | 0 |
+
+### 🧠 Hagámoslo más fácil
+
+- **`&`** requiere **exactamente dos `1`s** para proporcionar `1` como resultado;
+- **`|`** requiere **al menos un `1`** para proporcionar `1` como resultado;
+- **`^`** requiere **exactamente un `1`** para proporcionar `1` como resultado (si hay dos unos, el resultado es `0`).
+
+### ⚠️ Dos advertencias importantes
+
+1. **Los argumentos de estos operadores deben ser enteros** — no debemos usar flotantes aquí: Python lanza `TypeError: unsupported operand type(s) for &: 'float' and 'int'`.
+2. **La diferencia con los operadores lógicos es importante:** los operadores **lógicos no penetran en el nivel de bits** de su argumento — solo les interesa el **valor entero final** (`0` → `False`, distinto de `0` → `True`). Los operadores **a nivel de bits son más estrictos**: tratan con **cada bit por separado**. Si asumimos que un entero ocupa **64 bits**, puedes imaginar la operación como **64 evaluaciones simultáneas** del operador lógico para cada par de bits de los argumentos — en la vida real, todas se realizan **al mismo tiempo** (simultáneamente).
+
+> 🔎 **Verificado con Python:** la tabla de `~` muestra la negación de **un solo bit**; en Python `~` trabaja en **complemento a dos** sobre todos los bits del entero, por eso `~0` es `-1`, `~1` es `-2` y `~15` es `-16` (lo comprobarás en el ejemplo de la siguiente sección).
+
+---
+
+## 🔍 Diferencias: operadores lógicos vs. a nivel de bits
+
+Supongamos que se han realizado las siguientes asignaciones:
+
+```python
+valor1 = 15
+valor2 = 22
+```
+
+Si asumimos que los enteros se almacenan con 32 bits, los valores binarios de las dos variables serán:
+
+```text
+valor1:          00000000000000000000000000001111
+valor2:          00000000000000000000000000010110
+valor1 & valor2: 00000000000000000000000000000110
+```
+
+- **`valor1 and valor2`** — conjunción **lógica**: ambas variables son distintas de cero, por lo que se considera que representan `True`. Al consultar la tabla de verdad de `and`, el resultado es **`True`**.
+  > 🔎 En Python, `and` devuelve uno de sus **operandos**, no literalmente `True`: `15 and 22` devuelve `22`, que es *truthy* — por eso conviene comprobarlo con `bool(valor1 and valor2)` → `True`.
+- **`valor1 & valor2`** — conjunción **bit a bit**: el operador `&` opera con **cada par de bits correspondiente por separado** → `00000000000000000000000000000110`, es decir **6**.
+
+```python
+print(bin(valor1))            # 0b1111
+print(bin(valor2))            # 0b10110
+print(bin(valor1 & valor2))   # 0b110
+print(valor1 & valor2)        # 6
+```
+
+### 🔁 Operador de negación
+
+Primero el lógico: con `valor1 = 15` (número distinto de cero → `True`), **`not valor1`** nos devuelve el valor opuesto → **`False`**.
+
+La negación a nivel de bits es así: **`~valor1`** → **`-16`**. Puede parecer un poco sorprendente, pero no lo es en absoluto: los números negativos se representan en **complemento a dos**.
+
+```text
+valor1:   00000000000000000000000000001111
+~valor1:  11111111111111111111111111110000
+```
+
+### ✍️ Formas abreviadas (`op=`)
+
+Cada uno de estos operadores **de dos argumentos** sí se puede usar en forma abreviada (a diferencia de los operadores lógicos, que no la tienen):
+
+| Escritura completa | Forma abreviada |
+|---|---|
+| `x = x & y` | `x &= y` |
+| `x = x \| y` | `x \|= y` |
+| `x = x ^ y` | `x ^= y` |
+
+**Verificación ejecutable:**
+
+```python
+valor1, valor2 = 15, 22
+print(bin(valor1), bin(valor2))     # 0b1111 0b10110
+print(valor1 & valor2)              # 6
+print(bool(valor1 and valor2))      # True — el lógico solo mira el valor entero
+print(not valor1, ~valor1)          # False -16
+
+x = 12
+x &= 5
+print(x)                            # 4
 ```
