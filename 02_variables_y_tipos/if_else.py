@@ -100,3 +100,65 @@ if income < 85528:
 tax = round(tax, 0)
 print("El impuesto es:", tax, "pesos")
  
+
+year = int(input("Introduce un año: "))
+
+if year < 1582:
+	print("No esta dentro del período del calendario Gregoriano")
+else:
+	if year % 4 != 0:
+		print("Año Común")
+	elif year % 100 != 0:
+		print("Año Bisiesto")
+	elif year % 400 != 0:
+		print("Año Común")
+	else:
+		print("Año Bisiesto")
+
+
+#---------------------------------------------------
+x = 10
+ 
+if x > 5: # True
+    if x == 6: # False
+        print("anidado: x == 6")
+    elif x == 10: # True
+        print("anidado: x == 10")
+    else:
+        print("anidado: else")
+else:
+    print("else")
+
+ 
+#---------------------------------------------------\
+x = 10
+
+if x == 10: # True
+    print("x == 10")
+
+if x > 15: # False
+    print("x > 15")
+
+elif x > 10: # False
+    print("x > 10")
+
+elif x > 5: # True
+    print("x > 5")
+
+else:
+    print("else no será ejecutado")
+
+
+x = 10
+
+if x > 5: # primera condición
+    print("x es mayor que 5")  # Ejecutado si la primera condición es True.
+
+if x < 10: # segunda condición
+    print("x es menor que 10")  # Ejecutado si la segunda condición es True.
+
+if x == 10: # tercera condición
+     print("x es igual a 10")  # Ejecutado si la tercera condición es True.
+
+
+

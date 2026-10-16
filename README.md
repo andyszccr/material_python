@@ -26,7 +26,10 @@ material_python/
 ├── 02_variables_y_tipos/
 │   ├── README.md
 │   ├── operadores.md
-│   └── variables.py
+│   ├── variables.py
+│   ├── inputs.py
+│   ├── operaciones_en_cadena.py
+│   └── if_else.py
 ├── 03_entradas_y_condicionales/ (próximamente)
 ├── 04_bucles/                   (próximamente)
 ├── 05_colecciones/              (próximamente)
@@ -63,6 +66,9 @@ material_python/
 | [`README.md`](02_variables_y_tipos/README.md) | 📗 Notas: qué son las variables, tipos de datos, reasignación, operadores abreviados y `del` |
 | [`operadores.md`](02_variables_y_tipos/operadores.md) | 🔗 Notas: operadores de cadena `+`/`*` (concatenación y replicación), `str()`, resumen de la sección de entrada/salida y operadores de comparación (`==`, `!=`, `>`, `>=`, `<`, `<=`) |
 | [`variables.py`](02_variables_y_tipos/variables.py) 🐍 | Ejemplos ejecutables: creación de variables, `type()`, asignación múltiple, `*=`, `+=`, Pitágoras y `del` |
+| [`inputs.py`](02_variables_y_tipos/inputs.py) 🐍 | `input()` con y sin prompt, resultado como cadena, `float(input(...))` y la hipotenusa con datos del usuario |
+| [`operaciones_en_cadena.py`](02_variables_y_tipos/operaciones_en_cadena.py) 🐍 | Concatenación con `+`, rectángulo con `*`, `str()` para unir resultados y esqueleto del LAB de expresiones |
+| [`if_else.py`](02_variables_y_tipos/if_else.py) 🐍 | Estructuras `if`/`else`/`elif`: el mayor de dos o tres números, `max()`, comparación de cadenas y calculadora de impuestos |
 
 ### `03_entradas_y_condicionales/` — *(próximamente)*
 `input()`, `if`, `elif`, `else` y operadores de comparación.
