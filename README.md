@@ -91,7 +91,7 @@ material_python/
 | Archivo | Tema |
 |---|---|
 | [`README.md`](02_variables_y_tipos/README.md) | 📗 Notas: qué son las variables, tipos de datos, reasignación, operadores abreviados y `del` |
-| [`operadores.md`](02_variables_y_tipos/operadores.md) | 🔗 Notas: operadores de cadena `+`/`*` (concatenación y replicación), `str()`, resumen de la sección de entrada/salida, operadores de comparación (`==`, `!=`, `>`, `>=`, `<`, `<=`) y su resumen de sección (3.1.13) |
+| [`operadores.md`](02_variables_y_tipos/operadores.md) | 🔗 Notas: operadores de cadena `+`/`*` (concatenación y replicación), `str()`, resumen de la sección de entrada/salida, operadores de comparación y su resumen (3.1.13), y operadores lógicos `and`/`or`/`not` (tablas de verdad, prioridades, De Morgan) |
 | [`variables.py`](02_variables_y_tipos/variables.py) 🐍 | Ejemplos ejecutables: creación de variables, `type()`, asignación múltiple, `*=`, `+=`, Pitágoras y `del` |
 | [`inputs.py`](02_variables_y_tipos/inputs.py) 🐍 | `input()` con y sin prompt, resultado como cadena, `float(input(...))` y la hipotenusa con datos del usuario |
 | [`operaciones_en_cadena.py`](02_variables_y_tipos/operaciones_en_cadena.py) 🐍 | Concatenación con `+`, rectángulo con `*`, `str()` para unir resultados y esqueleto del LAB de expresiones |
@@ -106,6 +106,11 @@ material_python/
 |---|---|
 | [`README.md`](bucles%20y%20listas/README.md) | 📗 Notas: bucle infinito (`while True`), `Ctrl-C`/`KeyboardInterrupt`, centinela, `for` + `range()` con tres argumentos y LAB 3.2.7 (contar *mississippily*) |
 | [`01 while.py`](bucles%20y%20listas/01%20while.py) 🐍 | Lee números hasta el centinela `0` y cuenta cuántos son pares e impares con un bucle `while` |
+| [`02 while.py`](bucles%20y%20listas/02%20while.py) 🐍 | Salir del `while` con una **variable contador** (`counter = 5` → cuenta hacia atrás hasta `0`) |
+| [`03 while.py`](bucles%20y%20listas/03%20while.py) | *(archivo vacío — pendiente)* |
+| [`04 Bucle_For.py`](bucles%20y%20listas/04%20Bucle_For.py) 🐍 | Puente `while` → `for`: contar 100 vueltas con `while` — motivación del bucle `for` |
+| [`05 Bucle_for.py`](bucles%20y%20listas/05%20Bucle_for.py) 🐍 | `for` con `range()` de **un argumento** (`range(10)`) y de **tres** (`range(2, 8, 3)` → `2, 5`) |
+| [`06 Bucle_for.py`](bucles%20y%20listas/06%20Bucle_for.py) | Primera aproximación al **LAB 3.2.7** con `time.sleep(1)` — *⚠️ aún no coincide con la salida esperada* |
 
 ### `06_funciones/` — *(próximamente)*
 Definición de funciones, parámetros, retornos y ámbito.

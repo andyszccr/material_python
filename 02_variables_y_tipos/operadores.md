@@ -1,6 +1,6 @@
-# 🔗 Operadores de Cadena y Conversión de Tipos
+# 🔗 Operadores en Python: cadena, comparación y lógicos
 
-> Notas de apoyo del curso: **sección 6 — Entrada y salida básica** (operadores `+` y `*` aplicados a cadenas, la función `str()`, resumen de la sección), **sección 7 — Operadores de comparación** y **3.1.13 — Resumen de sección: operadores relacionales**.
+> Notas de apoyo del curso: **sección 6 — Entrada y salida básica** (operadores `+` y `*` aplicados a cadenas, la función `str()`, resumen de la sección), **sección 7 — Operadores de comparación**, **3.1.13 — Resumen de sección: operadores relacionales** y **operadores lógicos: `and`, `or`, `not`** (tablas de verdad, prioridades y leyes de De Morgan).
 
 ---
 
@@ -332,4 +332,125 @@ print(x > y, y > z)     # False True
 print(x < y, y < z)     # True False
 print(x >= y, x >= z, y >= z)   # False True True
 print(x <= y, x <= z, y <= z)   # True True False
+```
+---
+
+## ⚖️ Operadores lógicos: `and`, `or`, `not`
+
+Cuando queremos combinar **dos o más condiciones** en una sola expresión, entran en juego los **operadores lógicos**.
+
+> 📖 Del curso: si **tú estás en el centro comercial** **y** **yo estoy en el centro comercial**, uno de nosotros le comprará un regalo a mamá — la palabra **`and`** significa que la compra depende de **ambas** condiciones a la vez (en lógica: una **conjunción**). Si en su lugar decimos que estás **o** yo estoy, basta con que se cumpla **una sola** (en lógica: una **disyunción**). Python construye conjunciones y disyunciones con los **operadores lógicos**.
+
+### `and` — conjunción
+
+Es un operador **binario** con una prioridad **inferior a la de los operadores de comparación**. Esto permite codificar condiciones complejas **sin usar paréntesis**:
+
+```python
+counter > 0 and value == 100   # se lee como (counter > 0) and (value == 100)
+```
+
+El resultado se determina sobre la base de la **tabla de verdad**. Para la conjunción `A and B`:
+
+| Argumento A | Argumento B | `A and B` |
+|---|---|---|
+| `False` | `False` | `False` |
+| `False` | `True` | `False` |
+| `True` | `False` | `False` |
+| `True` | `True` | `True` |
+
+> 💡 **`and` solo devuelve `True` cuando los dos argumentos son `True`** — basta con un `False` en cualquier argumento para que el resultado sea `False`.
+
+### `or` — disyunción
+
+Es un operador **binario** con una prioridad **más baja que `and`** (del mismo modo que `==` tiene una prioridad más baja que `<` — por eso importa el orden en que se agrupan). Su tabla de verdad:
+
+| Argumento A | Argumento B | `A or B` |
+|---|---|---|
+| `False` | `False` | `False` |
+| `False` | `True` | `True` |
+| `True` | `False` | `True` |
+| `True` | `True` | `True` |
+
+> 💡 **`or` solo devuelve `False` cuando los dos argumentos son `False`** — basta con un `True` en cualquier argumento para que el resultado sea `True`.
+
+> 📌 Prioridad entre operadores lógicos (de mayor a menor): **`not` → `and` → `or`**.
+
+### `not` — negación
+
+Además, hay otro operador que se puede aplicar para construir condiciones. Es un operador **unario** que realiza una **negación lógica**. Su funcionamiento es simple: **convierte la verdad en falso y lo falso en verdad**.
+
+Se escribe como la palabra `not`, y el curso señala que su **prioridad es muy alta**: *igual que la de los unarios `+` y `-`*. Su tabla de verdad es simple:
+
+| Argumento | `not Argumento` |
+|---|---|
+| `False` | `True` |
+| `True` | `False` |
+
+> 🔎 **Verificado con Python:** `not 2 == 3` devuelve `True`, es decir Python lee `not (2 == 3)` — las **comparaciones** se agrupan antes que `not`. Por eso el propio curso escribe los paréntesis explícitos: `not (var <= 0)` — **úsalos también** para que la intención sea siempre inequívoca y la legibilidad mejore.
+
+---
+
+## 🧪 Expresiones lógicas — prácticas del curso
+
+### Equivalencias con `not`
+
+Creemos una variable llamada `var` y le demos el valor `1`. Las siguientes condiciones son **equivalentes**:
+
+```python
+var = 1
+
+# Ejemplo 1:
+print(var > 0)         # True
+print(not (var <= 0))  # True — la misma condición, negada
+
+# Ejemplo 2:
+print(var != 0)        # True
+print(not (var == 0))  # True — la misma condición, negada
+```
+
+### Las leyes de De Morgan
+
+Puede que ya estés familiarizado con las **leyes de De Morgan**. Dicen que:
+
+- La **negación de una conjunción** es la **disyunción de las negaciones**.
+- La **negación de una disyunción** es la **conjunción de las negaciones**.
+
+En Python:
+
+```python
+not (p and q) == (not p) or (not q)
+not (p or q) == (not p) and (not q)
+```
+
+> 📌 Los paréntesis están allí para **mejorar la legibilidad**; en expresiones largas, además, evitan que tengamos que recordar prioridades de memoria.
+
+### Otras notas importantes
+
+- **No existe la forma abreviada `op=`** para estos operadores: ninguno de los operadores lógicos de dos argumentos se puede usar como `and=` u `or=`.
+- Los operadores lógicos toman sus argumentos **como un todo**, independientemente de cuántos bits contengan: **cero** (todos los bits en 0) significa `False`; **distinto de cero** (algún bit en 1) significa `True`, y el resultado siempre es `False` o `True`:
+
+  ```python
+  i = 1
+  j = not not i   # True si i no es cero; False si i es cero
+  ```
+
+**Verificación ejecutable** (todas las salidas coinciden con las tablas y equivalencias):
+
+```python
+var = 1
+
+# Tablas de verdad de and y or
+for a in (False, True):
+    for b in (False, True):
+        print(a, b, "and->", a and b, "or->", a or b)
+
+print(not False, not True)            # True False
+print(var > 0, not (var <= 0))        # True True
+print(var != 0, not (var == 0))       # True True
+
+# De Morgan, comprobadas para las 4 combinaciones posibles de p y q
+print(all((not (p and q)) == ((not p) or (not q))
+          for p in (False, True) for q in (False, True)))   # True
+print(all((not (p or q)) == ((not p) and (not q))
+          for p in (False, True) for q in (False, True)))   # True
 ```

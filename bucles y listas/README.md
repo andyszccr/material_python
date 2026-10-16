@@ -193,6 +193,11 @@ print("¡Listos o no, ahí voy!")
 | Archivo | Tema |
 |---|---|
 | [`01 while.py`](01%20while.py) 🐍 | Lee números hasta el centinela `0` y cuenta cuántos son **impares** (`% 2 == 1`) y cuántos **pares** — mismo patrón: lectura antes del `while` y al final del cuerpo |
+| [`02 while.py`](02%20while.py) 🐍 | Salir del `while` con una **variable contador** (`counter = 5` → cuenta hacia atrás hasta `0`) |
+| [`03 while.py`](03%20while.py) | *(archivo vacío — pendiente)* |
+| [`04 Bucle_For.py`](04%20Bucle_For.py) 🐍 | Puente `while` → `for`: contar exactamente 100 vueltas con `while` — motivación del bucle `for` |
+| [`05 Bucle_for.py`](05%20Bucle_for.py) 🐍 | `for` con `range()` de **un argumento** (`range(10)`) y de **tres** (`range(2, 8, 3)` → `2, 5`) |
+| [`06 Bucle_for.py`](06%20Bucle_for.py) | Primera aproximación al **LAB 3.2.7** con `time.sleep(1)` — *⚠️ aún no coincide con la salida esperada* |
 
 ---
 
