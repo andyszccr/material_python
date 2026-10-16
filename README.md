@@ -1,4 +1,28 @@
+<p align="center">
+  <img src="assets/banner.png" alt="Plan · Code · Debug · Deploy · Repeat" width="760">
+</p>
+
 # 🐍 Material de Apoyo — Python
+
+<p align="center">
+  <b>Notas de teoría, scripts comentados y laboratorios de apoyo — al ritmo de un curso estilo PCEP</b>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.x">
+  <img src="https://img.shields.io/badge/Estilo-PEP%208-2EA44F?style=flat-square" alt="PEP 8">
+  <img src="https://img.shields.io/badge/Examen-PCEP-FFD43B?style=flat-square" alt="Estilo PCEP">
+  <img src="https://img.shields.io/badge/Estado-En%20crecimiento-4C9F70?style=flat-square" alt="En crecimiento">
+</p>
+
+<p align="center">
+  <a href="#-estructura-del-repositorio">Estructura</a> •
+  <a href="#-contenido-por-carpeta">Contenido</a> •
+  <a href="#-convenciones">Convenciones</a> •
+  <a href="#-recursos-útiles">Recursos</a>
+</p>
+
+---
 
 Repositorio de **material de apoyo sobre Python**, organizado por carpetas según el tema. El contenido se va agregando **paso a paso**: cada nueva carpeta corresponde a un tema o etapa del aprendizaje.
 
@@ -11,6 +35,8 @@ Repositorio de **material de apoyo sobre Python**, organizado por carpetas segú
 ```
 material_python/
 ├── README.md
+├── assets/
+│   └── banner.png
 ├── 01_fundamentos/
 │   ├── print.py
 │   ├── print_saltolinea.py
@@ -31,8 +57,9 @@ material_python/
 │   ├── operaciones_en_cadena.py
 │   └── if_else.py
 ├── 03_entradas_y_condicionales/ (próximamente)
-├── 04_bucles/                   (próximamente)
-├── 05_colecciones/              (próximamente)
+├── bucles y listas/
+│   ├── README.md
+│   └── 01 while.py
 ├── 06_funciones/                (próximamente)
 ├── 07_poo/                      (próximamente)
 ├── 08_archivos_y_errores/       (próximamente)
@@ -64,7 +91,7 @@ material_python/
 | Archivo | Tema |
 |---|---|
 | [`README.md`](02_variables_y_tipos/README.md) | 📗 Notas: qué son las variables, tipos de datos, reasignación, operadores abreviados y `del` |
-| [`operadores.md`](02_variables_y_tipos/operadores.md) | 🔗 Notas: operadores de cadena `+`/`*` (concatenación y replicación), `str()`, resumen de la sección de entrada/salida y operadores de comparación (`==`, `!=`, `>`, `>=`, `<`, `<=`) |
+| [`operadores.md`](02_variables_y_tipos/operadores.md) | 🔗 Notas: operadores de cadena `+`/`*` (concatenación y replicación), `str()`, resumen de la sección de entrada/salida, operadores de comparación (`==`, `!=`, `>`, `>=`, `<`, `<=`) y su resumen de sección (3.1.13) |
 | [`variables.py`](02_variables_y_tipos/variables.py) 🐍 | Ejemplos ejecutables: creación de variables, `type()`, asignación múltiple, `*=`, `+=`, Pitágoras y `del` |
 | [`inputs.py`](02_variables_y_tipos/inputs.py) 🐍 | `input()` con y sin prompt, resultado como cadena, `float(input(...))` y la hipotenusa con datos del usuario |
 | [`operaciones_en_cadena.py`](02_variables_y_tipos/operaciones_en_cadena.py) 🐍 | Concatenación con `+`, rectángulo con `*`, `str()` para unir resultados y esqueleto del LAB de expresiones |
@@ -73,11 +100,12 @@ material_python/
 ### `03_entradas_y_condicionales/` — *(próximamente)*
 `input()`, `if`, `elif`, `else` y operadores de comparación.
 
-### `04_bucles/` — *(próximamente)*
-`while`, `for`, `range()`, `break`, `continue`.
+### `bucles y listas/` — Bucles y listas
 
-### `05_colecciones/` — *(próximamente)*
-Listas, tuplas, diccionarios y conjuntos.
+| Archivo | Tema |
+|---|---|
+| [`README.md`](bucles%20y%20listas/README.md) | 📗 Notas: bucle infinito (`while True`), `Ctrl-C`/`KeyboardInterrupt`, centinela, `for` + `range()` con tres argumentos y LAB 3.2.7 (contar *mississippily*) |
+| [`01 while.py`](bucles%20y%20listas/01%20while.py) 🐍 | Lee números hasta el centinela `0` y cuenta cuántos son pares e impares con un bucle `while` |
 
 ### `06_funciones/` — *(próximamente)*
 Definición de funciones, parámetros, retornos y ámbito.

@@ -1,6 +1,6 @@
 # 🔗 Operadores de Cadena y Conversión de Tipos
 
-> Notas de apoyo del curso: **sección 6 — Entrada y salida básica** (operadores `+` y `*` aplicados a cadenas, la función `str()`, resumen de la sección) y **sección 7 — Operadores de comparación**.
+> Notas de apoyo del curso: **sección 6 — Entrada y salida básica** (operadores `+` y `*` aplicados a cadenas, la función `str()`, resumen de la sección), **sección 7 — Operadores de comparación** y **3.1.13 — Resumen de sección: operadores relacionales**.
 
 ---
 
@@ -306,3 +306,30 @@ current_velocity_mph <= 85  # Menor o igual que
 | menor o igual que | `<=` | izquierdo **≤** derecho |
 
 > 📌 Todos son **binarios**, con **enlazado del lado izquierdo**. Prioridad: `<`, `<=`, `>`, `>=` son **más altas** que `==` y `!=`.
+
+---
+
+## 🏁 3.1.13 Resumen de sección — operadores relacionales
+
+1. Los operadores de **comparación** (o también denominados operadores **relacionales**) se utilizan para comparar valores. La siguiente tabla ilustra cómo funcionan, asumiendo que **`x = 0`**, **`y = 1`** y **`z = 0`**:
+
+| Operador | Descripción | Ejemplo |
+|---|---|---|
+| `==` | Devuelve `True` si los valores de los operandos son **iguales**, y `False` de lo contrario. | `x == y` → `False`<br>`x == z` → `True` |
+| `!=` | Devuelve `True` si los valores de los operandos **no son iguales**, y `False` de lo contrario. | `x != y` → `True`<br>`x != z` → `False` |
+| `>` | Devuelve `True` si el valor del operando izquierdo es **mayor** que el valor del operando derecho, y `False` de lo contrario. | `x > y` → `False`<br>`y > z` → `True` |
+| `<` | Devuelve `True` si el valor del operando izquierdo es **menor** que el valor del operando derecho, y `False` de lo contrario. | `x < y` → `True`<br>`y < z` → `False` |
+| `>=` | Devuelve `True` si el valor del operando izquierdo es **mayor o igual** que el valor del operando derecho, y `False` de lo contrario. | `x >= y` → `False`<br>`x >= z` → `True`<br>`y >= z` → `True` |
+| `<=` | Devuelve `True` si el valor del operando izquierdo es **menor o igual** que el valor del operando derecho, y `False` de lo contrario. | `x <= y` → `True`<br>`x <= z` → `True`<br>`y <= z` → `False` |
+
+**Verificación ejecutable** (todas las salidas coinciden con la tabla):
+
+```python
+x, y, z = 0, 1, 0
+print(x == y, x == z)   # False True
+print(x != y, x != z)   # True False
+print(x > y, y > z)     # False True
+print(x < y, y < z)     # True False
+print(x >= y, x >= z, y >= z)   # False True True
+print(x <= y, x <= z, y <= z)   # True True False
+```
